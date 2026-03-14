@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pareekh Chamber - Notice Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        /* Mobile sidebar fix - agar sidebar mobile pe bhi left shift kar raha ho */
+        @media (max-width: 768px) {
+            .js-colorlib-nav-toggle { display: block; }
+            #colorlib-aside { transform: translateX(-100%); transition: all 0.5s; }
+            #colorlib-aside.show { transform: translateX(0); }
+            #colorlib-main { margin-left: 0 !important; padding-left: 0 !important; }
+        }
+
+        /* Center the entire notice content in right area */
+        .notice-wrapper {
+            padding: 30px 20px;
+            background: #f4f4f4;
+            min-height: 100vh;
+        }
+
+        .notice-container {
+            max-width: 1100px;
+            margin: 0 auto;                /* Center karne ke liye yeh sabse important hai */
+            position: relative;
+            z-index: 10;
+        }
+
+        .banner-section {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://media.istockphoto.com/id/152999202/photo/textile-looms.jpg?s=612x612&w=0&k=20&c=e7KR1Zgw3DMy8P16PJPXvozZi3MUX-6N9exQH5gdmko=') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+        }
+
+        .notice-card {
+            background: #ffffff;
+            border-left: 6px solid #8b0000;
+            padding: 28px;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .notice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 12px 12px 0 rgba(139,0,0,0.08);
+        }
+
+        .date-tag {
+            font-size: 13px;
+            font-weight: bold;
+            color: #8b0000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .notice-title {
+            font-size: 20px;
+            color: #1a2a6c;
+            font-weight: 700;
+            margin: 0 0 14px 0;
+            line-height: 1.35;
+        }
+
+        .notice-desc {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .read-more {
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 992px) {
+            .banner-section { height: 320px; }
+            h1 { font-size: 42px !important; }
+        }
+
+        @media (max-width: 576px) {
+            .notice-container { padding: 0 15px; }
+            .banner-section { height: 280px; }
+            .notice-card { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+        <h1 id="colorlib-logo"><a href="index.html">Pareekh Chamber</a></h1>
+        <nav id="colorlib-main-menu" role="navigation">
+            <ul>
+                <li class="colorlib-active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Our Chamber Services</a></li>
+                <li><a href="Management.html">Our Chamber Management</a></li>
+                <li><a href="TradeEnquiry.html">Trade Enquiry (e-Form)</a></li>
+                <li><a href="e-Quotation.html">e-Quotation (e-Form)</a></li>
+                <li><a href="e-Auction.html">e-Auction (e-Form)</a></li>
+                <li><a href="TenderContract.html">Tender & Contract</a></li>
+                <li><a href="Career.html">Career Page</a></li>
+                <li><a href="Circular.html">Circular</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="appointment.html">Visit with Appointment (e-form)</a></li>
+                <li><a href="NoticeBoard.html">Notice Board</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Association.html">Our Textile Association (India Map)</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Centered Notice Board Content -->
+    <div id="colorlib-main">
+        <div class="notice-wrapper">
+            <div class="notice-container">
+                <!-- Banner -->
+                <div class="banner-section">
+                    <div>
+                        <h1 style="font-size: 50px; font-family: 'Times New Roman', serif; margin: 0; letter-spacing: 3px; text-transform: uppercase; color: white">Notice Board</h1>
+                        <div style="width: 100px; height: 4px; background: #8b0000; margin: 15px auto;"></div>
+                        <p style="font-size: 20px; opacity: 0.9; font-style: italic;">Latest Updates & Corporate Announcements</p>
+                    </div>
+                </div>
+
+                <!-- Notice Cards -->
+                <div class="notice-grid">
+                    <div class="notice-card">
+                        <span class="date-tag">March 14, 2026</span>
+                        <h3 class="notice-title">New Trade Facilitation Policy for Members</h3>
+                        <p class="notice-desc">Hamari nayi trade policy ab live hai, jisme digital e-auction aur verification process ko fast kiya gaya hai...</p>
+                        <a href="#" class="read-more">Download PDF →</a>
+                    </div>
+
+                    <div class="notice-card">
+                        <span class="date-tag">March 12, 2026</span>
+                        <h3 class="notice-title">Annual Textile Expo - Surat 2026</h3>
+                        <p class="notice-desc">Is saal ka Annual Expo Surat International Exhibition Center mein organize kiya ja raha hai. Sabhi members invited hain...</p>
+                        <a href="#" class="read-more">Register Now →</a>
+                    </div>
+
+                    <div class="notice-card">
+                        <span class="date-tag">March 10, 2026</span>
+                        <h3 class="notice-title">Office Timings Adjustment (Summer)</h3>
+                        <p class="notice-desc">Garmi ke mausam ko dekhte hue, Head Office ke timings ab subah 9:00 AM se shaam 5:00 PM tak rahenge...</p>
+                        <a href="#" class="read-more">View Schedule →</a>
+                    </div>
+
+                    <div class="notice-card">
+                        <span class="date-tag">March 05, 2026</span>
+                        <h3 class="notice-title">GST Compliance Webinar for Vendors</h3>
+                        <p class="notice-desc">Sabhi vendors ke liye ek special webinar rakha gaya hai jisme GST ke naye rules aur compliance ke baare mein bataya jayega...</p>
+                        <a href="#" class="read-more">Join Meeting →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 35px 20px; color: #777; font-size: 15px;">
+                <p>In case of any query, contact the Admin Department at <span style="color: #1a2a6c;">support@hcparekh.com</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/sticky-kit.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
