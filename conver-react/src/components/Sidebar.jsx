@@ -7,14 +7,14 @@ const navItems = [
   { path: '/contact', label: 'Contact Us' },
   { path: '/services', label: 'Our Chamber Services' },
   { path: '/management', label: 'Our Chamber Management' },
-  { path: '/trade-enquiry', label: 'Trade Enquiry (e-Form)' },
-  { path: '/e-quotation', label: 'e-Quotation (e-Form)' },
-  { path: '/e-auction', label: 'e-Auction (e-Form)' },
+  { path: '/trade-enquiry', label: 'Trade Enquiry ' },
+  { path: '/e-quotation', label: 'e-Quotation ' },
+  { path: '/e-auction', label: 'e-Auction ' },
   { path: '/tender', label: 'Tender & Contract' },
   { path: '/career', label: 'Career Page' },
   { path: '/circular', label: 'Circular' },
   { path: '/blog', label: 'Blog' },
-  { path: '/appointment', label: 'Visit with Appointment (e-form)' },
+  { path: '/appointment', label: 'Visit with Appointment ' },
   { path: '/notice-board', label: 'Notice Board' },
   { path: '/association', label: 'Our Textile Association' },
 ];
@@ -24,7 +24,7 @@ export default function Sidebar() {
     <aside className="w-72 h-screen fixed top-0 left-0 bg-[#fefefe] border-r border-[#ececec] flex flex-col py-10 overflow-y-auto z-50">
       <h1 className="text-3xl font-bold text-center mb-12 w-full px-6">
         <NavLink to="/" className="text-black hover:text-primary transition-colors tracking-wide">
-          Pareekh Chamber
+          PAREKH CHAMBER OF TEXTILE 
         </NavLink>
       </h1>
       <nav className="w-full flex-grow flex flex-col space-y-1">
@@ -45,7 +45,7 @@ export default function Sidebar() {
         ))}
       </nav>
       <div className="mt-auto px-8 pt-10 text-[12px] text-gray-400 text-center">
-        © {new Date().getFullYear()} Pareekh Textile Chamber <br/>
+        © {new Date().getFullYear()} Parekh Textile Chamber <br/>
         All rights reserved.
       </div>
     </aside>

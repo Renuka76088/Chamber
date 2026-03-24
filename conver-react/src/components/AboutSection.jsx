@@ -13,11 +13,11 @@ export default function AboutSection() {
           <div>
             <span className="text-gray-400 font-medium tracking-widest uppercase text-[10px] block mb-2">Welcome</span>
             <h2 className="text-3xl font-bold text-gray-900 mb-6 relative pb-4">
-               About Pareekh Textile Chamber
+               About Parekh Textile Chamber
             </h2>
           </div>
           <p className="text-gray-600 leading-relaxed text-[15px]">
-            Pareekh Textile Chamber is committed to delivering premium quality fabrics with
+            Parekh Textile Chamber is committed to delivering premium quality fabrics with
             a perfect blend of tradition and modern textile innovation. Our focus is on
             craftsmanship, durability, and maintaining high standards in every fabric we produce.
           </p>
