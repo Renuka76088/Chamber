@@ -118,6 +118,42 @@
                 height: 500px;
             }
         }
+    
+
+        .map-container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Hover effect for pins */
+        .pin-group {
+            cursor: pointer;
+            transition: opacity 0.4s ease;
+        }
+
+        .pin-group:hover text {
+            fill: #d32f2f; /* Hover karne par text red ho jayega */
+        }
+
+        /* Animation Classes */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        
+    
     </style>
 </head>
 
@@ -126,7 +162,12 @@
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     
  <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-    <h1 id="colorlib-logo"><a href="index.html">PAREKH CHAMBER OF TEXTILE </a></h1>
+ <h1 id="colorlib-logo" style="text-align: center; margin-bottom: 25px; width: 100%; display: flex; justify-content: center;">
+  <a href="index.html" style="display: inline-block;">
+    <img src="images/logo.png" alt="Logo" 
+         style="width: 200px; max-width: 90vw; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+  </a>
+</h1>
     <nav id="colorlib-main-menu" role="navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -175,150 +216,32 @@
 </button>
 
 
-
 <div id="colorlib-main-content">
-<div style="margin: 0; padding: 0; font-family: 'Times New Roman', serif; background-color: #fdfbf7; min-height: 100vh; overflow-x: hidden;">
-    
-    <style>
-        /* Pulse Animation for Map Dots */
-        @keyframes sonar-pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(3.5); opacity: 0; }
-        }
+    <!-- Yeh naya wrapper map ko right mein laayega -->
+    <div class="map-wrapper-outer">
+        <div class="map-container">
+            <svg viewBox="0 0 1000 1000" id="india-map-svg" style="width: 100%; height: auto;">
+                <rect x="20" y="20" width="960" height="960" fill="none" stroke="#ddd" stroke-width="8" />
 
-        /* Smooth Floating Animation for Text */
-        @keyframes soft-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+                <text x="500" y="70" text-anchor="middle" font-size="29" font-weight="700" fill="#070c12">
+                    HC PAREKH & ASSOCIATES
+                </text>
 
-        /* Blink effect for "Introduced" */
-        @keyframes elegant-blink {
-            0%, 100% { opacity: 1; color: #70270a; }
-            50% { opacity: 0.5; color: #b79a63; }
-        }
+                <text x="500" y="105" text-anchor="middle" font-size="15" fill="#0f172b">
+                    www.hcparekh.com
+                </text>
 
-        .dot-wrapper {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 10;
-        }
+                <image 
+                    href="https://img.freepik.com/premium-vector/vector-map-black-outline-india-vector-illustration_686498-514.jpg?w=1060" 
+                    x="40" y="130" width="920" height="820" 
+                    preserveAspectRatio="xMidYMid meet" 
+                    opacity="0.28" 
+                />
 
-        .dot-core {
-            width: 12px;
-            height: 12px;
-            background: #70270a;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            position: relative;
-            box-shadow: 0 0 10px rgba(112, 39, 10, 0.4);
-        }
-
-        /* The Sonar/Blink Ring */
-        .dot-core::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            width: 12px;
-            height: 12px;
-            border: 2px solid #70270a;
-            border-radius: 50%;
-            animation: sonar-pulse 2s infinite;
-        }
-
-        .dot-label {
-            color: #302819;
-            font-size: 11px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
-            white-space: nowrap;
-        }
-    </style>
-
-    <div class="custom-content-wrapper">
-        <div style="width: 100%; padding: 40px 0; background: radial-gradient(circle, #fff 0%, #f4efe6 100%);">
-            <div class="map-wrapper" style="position: relative; width: 90%; max-width: 800px; margin: 0 auto; aspect-ratio: 1060 / 900;">
-                
-                <img src="https://media.istockphoto.com/id/2207896010/vector/detailed-map-of-india-and-its-regions.jpg?s=612x612&w=0&k=20&c=mSgsPYiGPs1AOpqT3xrj_-15oYuex4O6ImDDQt7KaZU=" 
-                     style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: contain; filter: sepia(20%) contrast(1.1); opacity: 0.8;" 
-                     alt="India Outline">
-
-                <div class="dot-wrapper" style="top: 48%; left: 18%;">
-                    <div class="dot-label">Parekh Fabrics</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div class="dot-wrapper" style="top: 55%; left: 22%;">
-                    <div class="dot-label">Parekh Silk</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div class="dot-wrapper" style="top: 52%; left: 45%;">
-                    <div class="dot-label">Parekh Rayon</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div class="dot-wrapper" style="top: 50%; left: 68%;">
-                    <div class="dot-label">Parekh Linen</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div class="dot-wrapper" style="top: 65%; left: 38%;">
-                    <div class="dot-label">Parekh e-Trade</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div class="dot-wrapper" style="top: 76%; left: 42%;">
-                    <div class="dot-label">Southern Polyfabrics</div>
-                    <div class="dot-core"></div>
-                </div>
-
-                <div style="position: absolute; bottom: 10px; right: 10px; border: 1px solid #70270a; padding: 8px; font-size: 10px; background: rgba(255,255,255,0.9); border-radius: 4px; font-family: sans-serif;">
-                    <div style="border-bottom: 2px solid #70270a; padding-bottom: 2px; font-weight: bold;">300 km</div>
-                    <div style="padding-top: 2px; opacity: 0.7;">Operational Reach</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section" style="padding: 60px 20px;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="color: #302819; font-size: 28px; text-transform: uppercase; font-family: 'Arial Black', sans-serif; margin-bottom: 5px; letter-spacing: 2px;">HC PAREKH & ASSOCIATES</h2>
-                <a href="http://www.hcparekh.com" style="color: #b79a63; font-size: 18px; text-decoration: none; font-weight: bold; border-bottom: 1px solid #b79a63;">www.hcparekh.com</a>
-                <h3 style="color: #70270a; font-size: 34px; margin-top: 35px; font-family: 'Georgia', serif; font-style: italic; letter-spacing: 8px; animation: elegant-blink 3s infinite;">Introduced</h3>
-            </div>
-
-            <div style="border-top: 4px solid #b79a63; padding-top: 40px; max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <h1 style="color: #302819; font-size: 42px; font-weight: 900; line-height: 1.1; margin-bottom: 20px;">Pan-India <br><span style="color: #70270a;">Textile Network</span></h1>
-                <p style="font-size: 19px; color: #5c4a2a; line-height: 1.7; font-weight: 300;">
-                    Hamara national network har major textile hub ko connect karta hai, Gujarat ke Fabrics se lekar Chennai ke Polyfabrics tak.
-                </p>
-                
-                <div style="margin-top: 40px; background: #fdfbf7; padding: 30px; border-radius: 15px; border: 1px solid #f4efe6;">
-                    <h4 style="color: #b79a63; font-size: 14px; margin-top: 0; text-transform: uppercase; tracking: 2px;">Operational Highlights:</h4>
-                    <ul style="color: #302819; line-height: 2.2; font-size: 18px; list-style-type: none; padding: 0; margin-top: 15px;">
-                        <li><span style="color: #b79a63; margin-right: 10px;">◈</span><strong>Parekh Fabrics:</strong> Western India Core</li>
-                        <li><span style="color: #b79a63; margin-right: 10px;">◈</span><strong>e-Trade Market:</strong> Digital Facilitation</li>
-                        <li><span style="color: #b79a63; margin-right: 10px;">◈</span><strong>Southern Polyfabrics:</strong> Industrial Materials</li>
-                        <li><span style="color: #b79a63; margin-right: 10px;">◈</span><strong>Parekh Linen:</strong> Eastern Specialization</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="margin-top: 60px; padding-bottom: 50px; text-align: center;">
-                <a href="tel:+910000000000" style="display: inline-block; background: #70270a; color: #fff; padding: 20px 60px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(112,39,10,0.2); transition: all 0.3s ease;">
-                    Contact Central Office
-                </a>
-            </div>
+                <g id="pins-layer"></g>
+            </svg>
         </div>
     </div>
-</div>
 </div>
 
 <footer style="background-color: #2C2C2C; color: #ffffff; font-family: 'Inter', sans-serif; padding: 60px 0 40px 0; border-top: 6px solid #FFC300; text-align: center;">
@@ -404,6 +327,99 @@
 
 </div>
 
+
+<script>
+    const locations = [
+        { id: 1, name: "Parekh Fabrics", city: "Ahmedabad", x: 330, y: 520 },
+        { id: 2, name: "Parekh Silk", city: "Surat", x: 350, y: 600 },
+        { id: 3, name: "Parekh Rayon", city: "Raipur", x: 498, y: 565 },
+        { id: 4, name: "Parekh Linen", city: "Kolkata", x: 625, y: 545 },
+        { id: 5, name: "Parekh e-Trade Market", city: "Hyderabad", x: 470, y: 645 },
+        { id: 6, name: "Parekh Chamber of Textile", city: "Bangalore", x: 405, y: 755 },
+        { id: 7, name: "Parekh Southern Polyfabrics", city: "Chennai", x: 475, y: 755 },
+    ];
+
+    const pinsLayer = document.getElementById('pins-layer');
+
+    function createPins() {
+        locations.forEach((loc, index) => {
+            // Adjust Label Positions (Logic from your React code)
+            let labelX = loc.x;
+            let labelY = loc.y - 35;
+            let textAnchor = "middle";
+
+            if (loc.id === 6) {
+                labelX = loc.x - 40;
+                labelY = loc.y - 5;
+                textAnchor = "end";
+            } else if (loc.id === 7) {
+                labelX = loc.x + 40;
+                labelY = loc.y - 5;
+                textAnchor = "start";
+            }
+
+            // Create SVG Group
+            const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            g.setAttribute("class", "pin-group");
+            g.style.opacity = "0";
+            
+            // Animation for appearance
+            setTimeout(() => {
+                g.style.opacity = "1";
+            }, index * 120 + 100);
+
+            // 1. Pulsing Glow
+            const glow = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            glow.setAttribute("cx", loc.x);
+            glow.setAttribute("cy", loc.y);
+            glow.setAttribute("r", "10");
+            glow.setAttribute("fill", "none");
+            glow.setAttribute("stroke", "#d32f2f");
+            glow.innerHTML = `
+                <animate attributeName="r" values="10;22" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.7;0" dur="1.5s" repeatCount="indefinite" />
+            `;
+
+            // 2. Blinking Center Dot
+            const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            dot.setAttribute("cx", loc.x);
+            dot.setAttribute("cy", loc.y);
+            dot.setAttribute("r", "6");
+            dot.setAttribute("fill", "#d32f2f");
+            dot.innerHTML = `
+                <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite" />
+            `;
+
+            // 3. Text (Name and City)
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute("x", labelX);
+            text.setAttribute("y", labelY);
+            text.setAttribute("text-anchor", textAnchor);
+            text.setAttribute("font-size", "14");
+            text.setAttribute("font-weight", "700");
+            text.setAttribute("fill", "#1a237e");
+            text.innerHTML = `
+                <tspan x="${labelX}" dy="0">${loc.name}</tspan>
+                <tspan x="${labelX}" dy="18" font-size="12" font-weight="600" fill="#555">${loc.city}</tspan>
+            `;
+
+            // Append everything
+            g.appendChild(glow);
+            g.appendChild(dot);
+            g.appendChild(text);
+            pinsLayer.appendChild(g);
+            
+            // Click event
+            g.addEventListener('click', () => {
+                console.log("Selected Location:", loc.name);
+                // Aap yahan click par koi bhi action add kar sakte hain
+            });
+        });
+    }
+
+    // Initialize
+    createPins();
+</script>
 
 <!-- Scripts remain same -->
  <script>
