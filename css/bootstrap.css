@@ -61,6 +61,10 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted;
 }
+.small-e {
+    text-transform: lowercase !important;
+}
+
 
 b,
 strong {
